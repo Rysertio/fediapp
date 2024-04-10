@@ -1,0 +1,67 @@
+<LoginPage>:
+    md_bg_color: self.theme_cls.backgroundColor
+    MDTextField:
+        id: instname
+        mode:"filled"
+        required: False
+        pos: (dp(10), root.height/2)
+        size_hint_x: None
+        width: root.width-dp(20)
+        MDTextFieldLeadingIcon:
+            icon:"web"
+        MDTextFieldHintText:
+            text:"Instance URL"
+        MDTextFieldTrailingIcon:
+            icon:"information"
+    MDButton:
+        style: "text"
+        height: "56dp"
+        size_hint_x: .5
+        pos:(root.width-dp(120),10)
+        on_press: root.check_instance()
+        MDButtonText:
+            font_style: "Title"
+            text: "Next"
+    MDCircularProgressIndicator:
+        id: loader
+        size_hint: None, None
+        size: "00dp", "100dp"
+        pos: (root.width/2-dp(50),root.height/2-dp(50))
+
+<HomePage>:
+    md_bg_color: self.theme_cls.backgroundColor
+    MDTabsPrimary:
+        id: primary_tabs
+        MDTabsCarousel:
+            id: primary_related_content_container
+            pos: 0,0
+            size_hint_y: None
+            height: root.height - dp(60)
+
+<codeEntryPage>:
+    md_bg_color: self.theme_cls.backgroundColor
+    MDTextField:
+        id: instname
+        mode:"filled"
+        required: False
+        pos: (dp(10), root.height/2)
+        size_hint_x: None
+        width: root.width-dp(20)
+        MDTextFieldHintText:
+            text:"Token Code"
+        MDTextFieldTrailingIcon:
+            icon:"information"
+    MDButton:
+        style: "text"
+        height: "56dp"
+        size_hint_x: .5
+        pos:(root.width-dp(120),10)
+        on_press: root.check_instance()
+        MDButtonText:
+            font_style: "Title"
+            text: "Next"
+    MDCircularProgressIndicator:
+        id: loader
+        size_hint: None, None
+        size: "00dp", "100dp"
+        pos: (root.width/2-dp(50),root.height/2-dp(50))
